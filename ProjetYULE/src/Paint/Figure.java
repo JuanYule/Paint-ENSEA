@@ -3,7 +3,7 @@ import java.awt.*;
 
 public abstract class Figure implements java.io.Serializable{
 
-    static Color c;
+    protected Color c;
 
     protected int x;
     protected int y;

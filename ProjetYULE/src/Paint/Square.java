@@ -14,7 +14,7 @@ public class Square extends Rectangle{
         this.width = L;
     }
     //======SETS===========//
-    public void setLength(int lengthSquare){
+    /*public void setLength(int lengthSquare){
         if (lengthSquare > 0){
             this.length = lengthSquare;
         }
@@ -23,9 +23,9 @@ public class Square extends Rectangle{
         if (widthSquare > 0){
             this.width = widthSquare;
         }
-    }
-    public void setBoundingBox(int  length,  int  width) {
-        this.length = length;
-        this.width = width;
+    }*/
+    public void setBoundingBox(int  heightBB,  int  widthBB) {
+        this.length = heightBB;
+        this.width = heightBB;
     }
 }

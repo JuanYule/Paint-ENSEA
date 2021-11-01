@@ -18,11 +18,15 @@ public class Ellipse extends Figure{
         this.semiAxisY = py;
         this.c = c;
     }
-
     public Ellipse (int px, int py, int r, int R, Color C){
         super(px, py, C);
         this.semiAxisX = r;
         this.semiAxisY = R;
+    }
+    public Ellipse(int px, int py, int r, Color C){
+        super(px,py,C);
+        this.semiAxisY = r;
+        this.semiAxisX = r;
     }
     public void setSemiAxisX(int axisX){
         if (axisX > 0){
