@@ -72,12 +72,12 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         Color C = this.C;
 
         if (nameFigure.equals("Rectangle")){
-            Rectangle rectangle0 = new Rectangle(x_real, y_real, C);
+            Rectangle rectangle0 = new Rectangle(x_pressed, y_pressed, x_real, y_real, C);
             this.list.add(rectangle0);
             //System.out.println(list);
         }
         if (nameFigure.equals("Ellipse")){
-            Ellipse ellipse0 = new Ellipse(x_real/2, y_real/2, C);
+            Ellipse ellipse0 = new Ellipse(x_pressed, y_pressed, x_real/2, y_real/2, C);
             this.list.add(ellipse0);
             //System.out.println(list);
         }
