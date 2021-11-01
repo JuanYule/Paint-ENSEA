@@ -15,8 +15,6 @@ public abstract class Figure implements java.io.Serializable{
 
     public int semiAxisX;
     public int semiAxisY;
-
-
     //========= GETTER =============//
     public Color getC() {
         return c;

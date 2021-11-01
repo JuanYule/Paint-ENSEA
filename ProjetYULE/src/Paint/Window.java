@@ -175,21 +175,25 @@ public class Window extends JFrame implements ActionListener {
             case "Ellipse":
                 //System.out.println("I've been clicked ellipse!");
                 draw.setCurrent_figure(new Ellipse());
+                draw.setName("Ellipse");
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Rectangle":
                 //System.out.println("I've been clicked rectangle!");
                 draw.setCurrent_figure(new Rectangle());
+                draw.setName("Rectagle");
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Square":
                 //System.out.println("I've been clicked square!");
                 draw.setCurrent_figure(new Square());
+                draw.setName("Square");
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Circle":
                 //System.out.println("I've been clicked circle!");
                 draw.setCurrent_figure(new Circle());
+                draw.setName("Circle");
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Author":

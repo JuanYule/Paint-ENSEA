@@ -44,7 +44,9 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         this.nameFigure = "Rectangle";
         this.current_figure = new Rectangle();
     }
-
+    public void setName(String name){
+        this.nameFigure = name;
+    }
     @Override
     public void mouseClicked(MouseEvent e) {
         this.x = e.getX();
