@@ -5,9 +5,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class Window extends JFrame implements ActionListener {
 
-    private Drawing drawing ;
+    private Drawing drawing;
+    protected String miFigura;
 
     public Window(String Title, int x, int y){
         super(Title);
@@ -80,7 +82,8 @@ public class Window extends JFrame implements ActionListener {
         South.add(deref);
         South.add(southPanel);
 //====================DAWING PANEL==============================//
-        this.drawing = new Drawing();
+        this.miFigura = "";
+        this.drawing = new Drawing(Color.red, miFigura);
         contentPanel.add(this.drawing, "Center");
         ///JPanel northPanel = new JPanel();
         //northPanel.setLayout(new GridLayout(60,1));
@@ -114,26 +117,6 @@ public class Window extends JFrame implements ActionListener {
     //========
         contentPanel.add(South,"South");
         this.setVisible(true);
-//======================================================//
-        /*northPanel.addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent e) {
-                draw.mouseClicked(e);
-            }
-            @Override
-            public void mousePressed(MouseEvent e) {
-                draw.mousePressed(e);
-            }
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                draw.mouseReleased(e);
-            }
-        });*/
-        /*drawing.addMouseMotionListener(new MouseAdapter() {
-            @Override
-            public void mouseDragged(MouseEvent e) {
-                draw.mouseDragged(e);
-            }
-        });*/
     }
  //=====================================================================///
     public void actionPerformed(ActionEvent e) {
@@ -174,22 +157,26 @@ public class Window extends JFrame implements ActionListener {
             //======================Button Implementation Figures==============================
             case "Ellipse":
                 //System.out.println("I've been clicked ellipse!");
-                this.drawing.setName("Ellipse");
+                miFigura = "Ellipse";
+                this.drawing.setName(miFigura);
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Rectangle":
                 //System.out.println("I've been clicked rectangle!");
-                this.drawing.setName("Rectagle");
+                miFigura = "Rectangle";
+                this.drawing.setName(miFigura);
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Square":
                 //System.out.println("I've been clicked square!");
-                this.drawing.setName("Square");
+                miFigura = "Square";
+                this.drawing.setName(miFigura);
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Circle":
                 //System.out.println("I've been clicked circle!");
-                this.drawing.setName("Circle");
+                miFigura = "Circle";
+                this.drawing.setName(miFigura);
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Author":

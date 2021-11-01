@@ -43,7 +43,7 @@ public abstract class Figure implements java.io.Serializable{
     //public abstract double getSurface(Figure figure);
 
     //public Figure(Integer R, Integer B, Integer G){
-    public Figure(int X, int Y, Color Co){
+    public Figure(int x, int y, Color Co){
         origine = new Point(x, y);
         this.c = Co;
     }
@@ -51,11 +51,13 @@ public abstract class Figure implements java.io.Serializable{
         origine = p;
         this.c =col;
     }
-
+    public Figure(Point point){
+        origine = point;
+    }
     //---------Abstract methodes------------------//
     //--------------------------------------------///
     public abstract void setBoundingBox(int  heightBB,  int  widthBB);
-    public abstract void draw(Graphics graphics);
+    public abstract void draw(Graphics g);
 
     public String ToString() {return Integer.toString(x) + Integer.toString(y); }
 }

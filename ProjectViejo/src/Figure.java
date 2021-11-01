@@ -27,21 +27,17 @@ public abstract class Figure implements java.io.Serializable {
 		origine = new Point(x, y); 
 		this.color = Color.black;
 	}*/
-
     public Figure (Point point) {
         origine = point;
     }
-
     public Figure (int x, int y, Color c) {
         origine = new Point(x, y);
         this.color = c;
     }
-
     public Figure (Point p, Color c) {
         origine = p;
         this.color = c;
     }
-
     public Point get_origine(Point p) {return p;}
     public String ToString() {return Integer.toString(x) + Integer.toString(y); }
 }

@@ -2,8 +2,6 @@ package Paint;
 
 public class TestSwing {
 
-    protected Drawing draw = new Drawing();
-
     public static void main(String[] args) {
         //Verifica la creación del punto//
         /*On a crée 2 points

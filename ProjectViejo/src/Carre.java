@@ -70,33 +70,5 @@ public class Carre extends Rectangle {
             this.longueur = cc;
         }
     }
-    public String affiche(Carre carre) {
-        String dessin = "+";
-        int i ;
-        int j ;
-        int k;
-        int c = carre.largeur ;
-        for (i=1; i<c; i++) {
-            dessin += "--";
-        }
-        dessin+= "+";
-        for (j=1; j<c; j++) {
-            if (j<c-1) {
-                dessin += "\n|";
-                for(k=1; k<c; k++) {
-                    dessin += "  ";
-                }
-                dessin+="|";
-            }
-            else {
-                dessin += "\n+";
-                for (i=1; i<c; i++) {
-                    dessin += "--";
-                }
-                dessin+="+";
-            }
-        }
-        return dessin;
-    }
     public String ToString() {return Integer.toString(x) + Integer.toString(y) + Integer.toString(L); }
 }

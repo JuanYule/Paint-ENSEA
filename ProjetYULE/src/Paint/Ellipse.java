@@ -14,6 +14,9 @@ public class Ellipse extends Figure{
     //Created Ellipse
     public Ellipse (int px, int py, Color c){
         super(px, py, c);
+        this.semiAxisX = px;
+        this.semiAxisY = py;
+        this.c = c;
     }
 
     public Ellipse (int px, int py, int r, int R, Color C){
@@ -42,11 +45,10 @@ public class Ellipse extends Figure{
         this.semiAxisX = hauteurBB;
         this.semiAxisY = largeurBB;
     }
-
-    public void draw(Graphics graphics) {
+    public void draw(Graphics g) {
         //System.out.println(this.color);
-        graphics.setColor(this.c);
-        graphics.fillRect(origine.getX(),origine.getY(), semiAxisX, semiAxisY);
+        g.setColor(this.c);
+        g.fillOval(origine.getX(),origine.getY(), semiAxisX, semiAxisY);
     }
     public String ToString() {return Integer.toString(x) + Integer.toString(y); }
 }

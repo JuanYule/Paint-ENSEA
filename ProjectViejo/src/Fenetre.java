@@ -36,7 +36,6 @@ public class Fenetre extends JFrame implements ActionListener{
         }
 
     }
-
     public void openFile() {
         FileInputStream file_in;
         ObjectInputStream in ;
@@ -55,7 +54,6 @@ public class Fenetre extends JFrame implements ActionListener{
             e.printStackTrace();
         }
     }
-
     public void actionPerformed (ActionEvent e) {
         String cmd = e.getActionCommand();
         if(cmd.equals("Popo")) {

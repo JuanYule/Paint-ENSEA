@@ -33,6 +33,9 @@ public class Circle extends Ellipse{
     public double getSurface(Circle circle) {return pi*circle.semiAxisX*circle.semiAxisY;}
     public double getPerimetre(Circle circle) {return 2*pi*circle.semiAxisX;}
 
-    public void setBoundingBox(int hauteurBB, int largeurBB) {}
+    public void setBoundingBox(int hauteurBB, int largeurBB) {
+        this.r = hauteurBB;
+        this.r = largeurBB;
+    }
     public String ToString() {return Integer.toString(x) + Integer.toString(y) + Integer.toString(r); }
 }

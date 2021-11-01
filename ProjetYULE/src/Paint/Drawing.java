@@ -32,7 +32,7 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         return current_figure;
     }
 
-    public Graphics graphics;
+    public Graphics g;
 
     public void setColor(Color c) {
         this.C = c;
@@ -45,9 +45,9 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         this.current_figure = current_figure;
     }
 
-    public Drawing(){
+    public Drawing(Color color, String fig){
         super();
-        this.nameFigure = "Rectangle";
+        C = color;
         addMouseListener(this);
         addMouseMotionListener(this);
     }
@@ -55,7 +55,7 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         this.nameFigure = name;
     }
 
-    @Override
+
     public void paintComponent(Graphics graphics){
         super.paintComponent(graphics);
         this.setBackground(Color.WHITE);
@@ -65,12 +65,11 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         //graphics.drawRect(x_pressed,y_pressed,Math.abs(x_pressed-x_releassed),Math.abs(y_pressed-y_releassed));
     }
 
-    @Override
     public void mousePressed(MouseEvent e) {
         x_pressed = e.getX();
         y_pressed = e.getY();
         System.out.println(this.x_pressed+" et "+ this.y_pressed + " couleur =" + this.C);
-
+        Color C = this.C;
 
         if (nameFigure.equals("Rectangle")){
             Rectangle rectangle0 = new Rectangle(x_real, y_real, C);
@@ -93,17 +92,17 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
             //System.out.println(list);
         }
     }
-    @Override
+
     public void mouseReleased(MouseEvent e) {
         this.x_releassed = e.getX();
         this.y_releassed = e.getY();
     }
-    @Override
+
     public void mouseDragged(MouseEvent e) {
         x_dragged = e.getX();
         y_dragged = e.getY();
-        x_real = Math.abs(x_pressed-x_releassed);
-        y_real = Math.abs(y_pressed-y_releassed);
+        x_real = Math.abs(x_dragged-x_pressed);
+        y_real = Math.abs(x_dragged-x_pressed);
         list.get(list.size()-1).setBoundingBox(x_real, y_real);
         this.repaint();
     }
