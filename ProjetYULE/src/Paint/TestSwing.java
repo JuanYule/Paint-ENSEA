@@ -1,7 +1,5 @@
 package Paint;
 
-import java.awt.*;
-
 public class TestSwing {
 
     protected Drawing draw = new Drawing();
@@ -15,7 +13,6 @@ public class TestSwing {
         System.out.println("l'ordonne de Y: " + P1.getY());
         System.out.println("l'ordonne de X2: " + P2.getX());
         System.out.println("l'ordonne de Y2: " + P2.getY());
-         */
 
         Rectangle Rect1 = new Rectangle(3,6, Color.LIGHT_GRAY);
         System.out.println("X: " + Rect1.getX() + "||Y: " + Rect1.getY() + "||Color: " + Rect1.getC());
@@ -42,6 +39,7 @@ public class TestSwing {
         Square  square1 = new Square(10, Color.ORANGE);
         System.out.println("L Square :" + square1.getX());
         //===============================//
+        */
         //=====Creation window===========//
         Window win = new Window("Paint by YULE", 800, 600);
     }

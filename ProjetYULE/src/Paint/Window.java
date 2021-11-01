@@ -18,36 +18,13 @@ public class Window extends JFrame implements ActionListener {
 
         Container contentPanel = this.getContentPane() ;
         contentPanel.setLayout(null);
-//================ menu bar ===========================//
-        JMenuBar m = new JMenuBar();
 
-        JMenu menu1= new JMenu("File");
-        JMenuItem New = new JMenuItem("New") ;
-        JMenuItem Open = new JMenuItem("Open") ;
-        JMenuItem Save = new JMenuItem("Save") ;
-        JMenuItem Quit = new JMenuItem("Quit") ;
-
-        menu1.add(New);
-        menu1.add(Open);
-        menu1.add(Save);
-        menu1.add(Quit);
-
-        JMenu menu2 = new JMenu("About");
-        JMenuItem Author = new JMenuItem("Author");
-        Author.addActionListener(this);
-
-        menu2.add(Author);
-
-
-        m.add(menu1);
-        m.add(menu2);
-
-        this.setJMenuBar(m);
-        this.setVisible(true);
-
-//====================Panel Colors=========================================
-
-
+//====================NORTH PANEL==============================//
+        JPanel northPanel = new JPanel();
+        //northPanel.setLayout(new GridLayout(60,1));
+        northPanel.setBounds(0,0,800,480);
+        northPanel.setBackground(Color.WHITE);
+//====================Panel Colors=========================================//
         JButton noir = new JButton("Noir");
         noir.addActionListener( this);
         noir.setBackground(Color.black);
@@ -80,8 +57,8 @@ public class Window extends JFrame implements ActionListener {
         orange.addActionListener( this);
         orange.setBackground(Color.orange);
 
-
         JPanel deref = new JPanel();
+        deref.setBounds(1,480,400,60);
         deref.setLayout(new GridLayout(2,4));
         deref.add(noir);
         deref.add(rouge);
@@ -91,12 +68,7 @@ public class Window extends JFrame implements ActionListener {
         deref.add(rose);
         deref.add(purple);
         deref.add(orange);
-
-        contentPanel.add(deref);
-        deref.setBounds(1,480,400,60);
-
 //=====================Panel Figures======================================
-
         JButton Ellipse = new JButton("Ellipse");
         Ellipse.addActionListener( this);
         JButton Rectangle = new JButton("Rectangle");
@@ -107,46 +79,64 @@ public class Window extends JFrame implements ActionListener {
         Square.addActionListener( this);
 
         JPanel southPanel = new JPanel();
+        southPanel.setBounds(400,480,400,60);
         southPanel.setLayout(new GridLayout(2,2));
         southPanel.add(Ellipse);
         southPanel.add(Rectangle);
         southPanel.add(Circle);
         southPanel.add(Square);
+//========================== menu bar ===========================//
+        JMenuBar m = new JMenuBar();
 
-        contentPanel.add(southPanel);
-        southPanel.setBounds(400,480,400,60);
+        JMenu menu1= new JMenu("File");
+        JMenuItem New = new JMenuItem("New") ;
+        JMenuItem Open = new JMenuItem("Open") ;
+        JMenuItem Save = new JMenuItem("Save") ;
+        JMenuItem Quit = new JMenuItem("Quit") ;
 
-//============================Panel Draw==================================//
+        menu1.add(New);
+        menu1.add(Open);
+        menu1.add(Save);
+        menu1.add(Quit);
 
-        JPanel northPanel = new JPanel();
-        northPanel.setLayout(new GridLayout(60,1));
-        //southwestPanel.setBounds(400,400,400,100);
+        JMenu menu2 = new JMenu("About");
+        JMenuItem Author = new JMenuItem("Author");
+        Author.addActionListener(this);
+
+        menu2.add(Author);
+
+        m.add(menu1);
+        m.add(menu2);
+
+        this.setJMenuBar(m);
+
         contentPanel.add(northPanel,"North");
+        contentPanel.add(southPanel, "South");
+        contentPanel.add(deref);
+        this.setVisible(true);
+//======================================================//
 
-        draw.addMouseListener(new MouseAdapter() {
+        northPanel.addMouseListener(new MouseAdapter() {
 
             public void mouseClicked(MouseEvent e) {
-                //draw.mouseClicked(e);
+                System.out.println(e.getX() + " " + e.getY());
+                draw.mouseClicked(e);
             }
-
             @Override
             public void mousePressed(MouseEvent e) {
                 draw.mousePressed(e);
             }
-
             @Override
             public void mouseReleased(MouseEvent e) {
                 draw.mouseReleased(e);
             }
         });
-
         draw.addMouseMotionListener(new MouseAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
                 draw.mouseDragged(e);
             }
         });
-
     }
  //=====================================================================///
     public void actionPerformed(ActionEvent e) {
