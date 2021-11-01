@@ -50,10 +50,10 @@ public class Rectangle extends Figure{
         this.length = heightBB;
         this.width = widthBB;
     }
-    public void draw(Graphics g) {
+    public void draw(Graphics graphics) {
         //System.out.println(this.color);
-        g.setColor(this.c);
-        g.fillRect(origine.getX(),origine.getY(), length, width);
+        graphics.setColor(this.c);
+        graphics.fillRect(origine.getX(),origine.getY(), length, width);
     }
     public String ToString() {return Integer.toString(x) + Integer.toString(y); }
 }

@@ -13,8 +13,6 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
     private String nameFigure;
     private Figure current_figure;
     private ArrayList<Figure> list = new ArrayList<Figure>();
-    private int x;
-    private int y;
     private int x_pressed;
     private int y_pressed;
     private int x_releassed;
@@ -49,8 +47,6 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
 
     public Drawing(){
         super();
-        this.setBackground(Color.WHITE);
-        this.C = Color.BLACK;
         this.nameFigure = "Rectangle";
         addMouseListener(this);
         addMouseMotionListener(this);
@@ -62,6 +58,7 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
     @Override
     public void paintComponent(Graphics graphics){
         super.paintComponent(graphics);
+        this.setBackground(Color.WHITE);
         for (Figure f : list){
             f.draw(graphics);
         }
@@ -107,7 +104,7 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         y_dragged = e.getY();
         x_real = Math.abs(x_pressed-x_releassed);
         y_real = Math.abs(y_pressed-y_releassed);
-        list.get(list.size()-1);
+        list.get(list.size()-1).setBoundingBox(x_real, y_real);
         this.repaint();
     }
     @Override

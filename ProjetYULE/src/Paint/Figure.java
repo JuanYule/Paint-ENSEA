@@ -44,9 +44,8 @@ public abstract class Figure implements java.io.Serializable{
 
     //public Figure(Integer R, Integer B, Integer G){
     public Figure(int X, int Y, Color Co){
+        origine = new Point(x, y);
         this.c = Co;
-        this.x = X;
-        this.y = Y;
     }
     public Figure(Point p, Color col) {
         origine = p;

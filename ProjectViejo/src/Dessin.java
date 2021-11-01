@@ -73,6 +73,7 @@ public class Dessin extends JPanel implements MouseListener, MouseMotionListener
             //System.out.print("La liste est :" + liste);
         }
     }
+
     public void paintComponent(Graphics graph) {
         super.paintComponent(graph);
         this.setBackground(Color.white);
