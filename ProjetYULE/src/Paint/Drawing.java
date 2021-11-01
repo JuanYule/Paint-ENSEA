@@ -53,6 +53,12 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
     }
 
     @Override
+    public void paintComponent(Graphics graphics){
+        super.paintComponent(graphics);
+        graphics.drawRect(x_pressed,y_pressed,Math.abs(x_pressed-x_releassed),Math.abs(y_pressed-y_releassed));
+    }
+
+    @Override
     public void mousePressed(MouseEvent e) {
         this.x_pressed = e.getX();
         this.y_pressed = e.getY();
@@ -87,7 +93,11 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         this.y_releassed = e.getY();
     }
     @Override
-    public void mouseDragged(MouseEvent e) {}
+    public void mouseDragged(MouseEvent e) {
+        this.x_releassed = e.getX();
+        this.y_releassed = e.getY();
+        this.repaint();
+    }
     @Override
     public void mouseEntered(MouseEvent e) {}
     @Override

@@ -110,12 +110,12 @@ public class Window extends JFrame implements ActionListener {
 
         this.setJMenuBar(m);
 
-        contentPanel.add(northPanel,"North");
+        contentPanel.add(northPanel,"Center");
         contentPanel.add(southPanel, "South");
         contentPanel.add(deref);
         this.setVisible(true);
 //======================================================//
-        northPanel.addMouseListener(new MouseAdapter() {
+        draw.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 draw.mouseClicked(e);
             }

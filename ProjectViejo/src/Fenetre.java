@@ -56,7 +56,6 @@ public class Fenetre extends JFrame implements ActionListener{
         }
     }
 
-
     public void actionPerformed (ActionEvent e) {
         String cmd = e.getActionCommand();
         if(cmd.equals("Popo")) {

@@ -20,11 +20,9 @@ public class Ellipse extends Figure{
         super(px, py, C);
 
     }
-
     public Ellipse() {
 
     }
-
 
     public void setSemiAxisX(int axisX){
         if (axisX > 0){

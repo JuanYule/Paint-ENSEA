@@ -5,8 +5,9 @@ import java.util.*;
 import java.awt.Image;
 
 public class BLTest {
-    public static void main(String [] args) {
+    public static void main(String[] args) {
 
         Fenetre Carca = new Fenetre("Carca la grosse michto qui pecho en dansant du rock");
     }
+}
 	
