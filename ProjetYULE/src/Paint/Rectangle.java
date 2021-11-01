@@ -19,12 +19,8 @@ public class Rectangle extends Figure{
         super(px, py, c);
         this.length = px;
         this.width = py;
-        System.out.println("rectangle created");
     }
-
-    public Rectangle() {
-
-    }
+    public Rectangle() {}
 
     //=======================================/
     //=============== SET====================/
@@ -50,12 +46,10 @@ public class Rectangle extends Figure{
         this.length = heightBB;
         this.width = widthBB;
     }
-
     public void draw(Graphics g) {
         //System.out.println(this.color);
         //g.setColor(this.c);
         //g.fillRect(origine.getX(),origine.getY(), length, width);
     }
-
     public String ToString() {return Integer.toString(x) + Integer.toString(y); }
 }
