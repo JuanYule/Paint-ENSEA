@@ -30,6 +30,8 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         return current_figure;
     }
 
+    public Graphics graphics;
+
     public void setColor(Color c) {
         this.C = c;
     }
@@ -47,6 +49,8 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         this.C = Color.BLACK;
         this.nameFigure = "Rectangle";
         this.current_figure = new Rectangle();
+        addMouseListener(this);
+        addMouseMotionListener(this);
     }
     public void setName(String name){
         this.nameFigure = name;

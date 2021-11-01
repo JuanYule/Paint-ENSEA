@@ -175,9 +175,6 @@ public class Fenetre extends JFrame implements ActionListener{
         }
     }
 
-
-
-
     public Fenetre(String titre, int length, int width, boolean b, int loc1, int loc2) {
         super();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -188,6 +185,7 @@ public class Fenetre extends JFrame implements ActionListener{
 
     public Fenetre(String titre){
         super(titre);
+        //================================
         System.out.println("On a faim");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocation(0,200);
@@ -195,7 +193,7 @@ public class Fenetre extends JFrame implements ActionListener{
         // conteneur contient un BorderLayout remplace
         //setLayout(new BorderLayout());
         Container contentPane = getContentPane() ;
-
+//=================================
         /*Pour les panels */
         JPanel TJS = new JPanel();
         TJS.setLayout(new GridLayout(2,6));
@@ -239,7 +237,7 @@ public class Fenetre extends JFrame implements ActionListener{
         Paul_out.setBackground(Color.cyan);
         Paul_out.addActionListener(this);
         TJS.add(Paul_out);
-
+//==============================================
         JPanel Cmarrant = new JPanel();
         Cmarrant.setLayout(new GridLayout(2,2));
         JButton Haha = new JButton("Haha");
@@ -254,21 +252,21 @@ public class Fenetre extends JFrame implements ActionListener{
         JButton Bouton_relou = new JButton("Ah des barres");
         Bouton_relou.addActionListener(this);
         Cmarrant.add(Bouton_relou);
-
+//==================================================
         this.maFigure = "";
 
         this.CarcaQuiDessineBourre = new Dessin(Color.black, maFigure);
         contentPane.add(this.CarcaQuiDessineBourre, "Center");
         //contentPane.add(new JTextArea("T'es virée"),"Center");
 
-
+//==========================================================
 
         JPanel ATable = new JPanel();
         ATable.setLayout(new GridLayout(1, 2));
         ATable.add(TJS);
         ATable.add(Cmarrant);
         contentPane.add(ATable, "South");
-
+//==============================================
         /* Pour les menus*/
         JMenuBar m= new JMenuBar();
         JMenu menu1=new JMenu("Cyril");

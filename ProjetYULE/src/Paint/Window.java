@@ -4,26 +4,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class Window extends JFrame implements ActionListener {
 
-    protected Drawing draw = new Drawing();
+    private Drawing drawing ;
 
     public Window(String Title, int x, int y){
         super(Title);
         this.setSize(x,y);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        Container contentPanel = this.getContentPane() ;
-        contentPanel.setLayout(null);
-
-//====================NORTH PANEL==============================//
-        JPanel northPanel = new JPanel();
-        //northPanel.setLayout(new GridLayout(60,1));
-        northPanel.setBounds(0,0,800,480);
-        northPanel.setBackground(Color.WHITE);
+        Container contentPanel = this.getContentPane();
 //====================Panel Colors=========================================//
         JButton noir = new JButton("Noir");
         noir.addActionListener( this);
@@ -58,7 +49,6 @@ public class Window extends JFrame implements ActionListener {
         orange.setBackground(Color.orange);
 
         JPanel deref = new JPanel();
-        deref.setBounds(1,480,400,60);
         deref.setLayout(new GridLayout(2,4));
         deref.add(noir);
         deref.add(rouge);
@@ -79,12 +69,22 @@ public class Window extends JFrame implements ActionListener {
         Square.addActionListener( this);
 
         JPanel southPanel = new JPanel();
-        southPanel.setBounds(400,480,400,60);
         southPanel.setLayout(new GridLayout(2,2));
         southPanel.add(Ellipse);
         southPanel.add(Rectangle);
         southPanel.add(Circle);
         southPanel.add(Square);
+//==============Add panel colors and figures in one panel==========//
+        JPanel South = new JPanel();
+        South.setLayout(new GridLayout(1, 2));
+        South.add(deref);
+        South.add(southPanel);
+//====================DAWING PANEL==============================//
+        this.drawing = new Drawing();
+        contentPanel.add(this.drawing, "Center");
+        //JPanel northPanel = new JPanel();
+        //northPanel.setLayout(new GridLayout(60,1));
+        //northPanel.setBackground(Color.WHITE);
 //========================== menu bar ===========================//
         JMenuBar m = new JMenuBar();
 
@@ -109,13 +109,11 @@ public class Window extends JFrame implements ActionListener {
         m.add(menu2);
 
         this.setJMenuBar(m);
-
-        contentPanel.add(northPanel,"Center");
-        contentPanel.add(southPanel, "South");
-        contentPanel.add(deref);
+    //========
+        contentPanel.add(South,"South");
         this.setVisible(true);
 //======================================================//
-        draw.addMouseListener(new MouseAdapter() {
+        /*northPanel.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 draw.mouseClicked(e);
             }
@@ -127,73 +125,73 @@ public class Window extends JFrame implements ActionListener {
             public void mouseReleased(MouseEvent e) {
                 draw.mouseReleased(e);
             }
-        });
-        draw.addMouseMotionListener(new MouseAdapter() {
+        });*/
+        /*drawing.addMouseMotionListener(new MouseAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
                 draw.mouseDragged(e);
             }
-        });
+        });*/
     }
  //=====================================================================///
     public void actionPerformed(ActionEvent e) {
         String cmd = e.getActionCommand();
         switch (cmd) {
             case "Noir":
-                draw.setColor(Color.BLACK);
+                this.drawing.setColor(Color.BLACK);
                 //System.out.println("I've been clicked Noir!");
                 break;
             case "Rouge":
                 //System.out.println("I've been clicked rouge!");
-                draw.setColor(Color.RED);
+                this.drawing.setColor(Color.RED);
                 break;
             case "Jaune":
                 //System.out.println("I've been clicked jaune!");
-                draw.setColor(Color.YELLOW);
+                this.drawing.setColor(Color.YELLOW);
                 break;
             case "Purple":
                 //System.out.println("I've been clicked purple!");
-                draw.setColor(Color.MAGENTA);
+                this.drawing.setColor(Color.MAGENTA);
                 break;
             case "Bleu":
                 //System.out.println("I've been clicked blue!");
-                draw.setColor(Color.BLUE);
+                this.drawing.setColor(Color.BLUE);
                 break;
             case "Vert":
                 //System.out.println("I've been clicked vert!");
-                draw.setColor(Color.GREEN);
+                this.drawing.setColor(Color.GREEN);
                 break;
             case "Orange":
                 //System.out.println("I've been clicked orange!");
-                draw.setColor(Color.ORANGE);
+                this.drawing.setColor(Color.ORANGE);
                 break;
             case "Rose":
                 //System.out.println("I've been clicked Rose");
-                draw.setColor(Color.PINK);
+                this.drawing.setColor(Color.PINK);
                 break;
             //======================Button Implementation Figures==============================
             case "Ellipse":
                 //System.out.println("I've been clicked ellipse!");
-                draw.setCurrent_figure(new Ellipse());
-                draw.setName("Ellipse");
+                this.drawing.setCurrent_figure(new Ellipse());
+                this.drawing.setName("Ellipse");
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Rectangle":
                 //System.out.println("I've been clicked rectangle!");
-                draw.setCurrent_figure(new Rectangle());
-                draw.setName("Rectagle");
+                this.drawing.setCurrent_figure(new Rectangle());
+                this.drawing.setName("Rectagle");
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Square":
                 //System.out.println("I've been clicked square!");
-                draw.setCurrent_figure(new Square());
-                draw.setName("Square");
+                this.drawing.setCurrent_figure(new Square());
+                this.drawing.setName("Square");
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Circle":
                 //System.out.println("I've been clicked circle!");
-                draw.setCurrent_figure(new Circle());
-                draw.setName("Circle");
+                this.drawing.setCurrent_figure(new Circle());
+                this.drawing.setName("Circle");
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Author":

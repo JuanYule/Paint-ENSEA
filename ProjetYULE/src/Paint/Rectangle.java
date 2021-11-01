@@ -48,8 +48,8 @@ public class Rectangle extends Figure{
     }
     public void draw(Graphics g) {
         //System.out.println(this.color);
-        //g.setColor(this.c);
-        //g.fillRect(origine.getX(),origine.getY(), length, width);
+        g.setColor(this.c);
+        g.fillRect(origine.getX(),origine.getY(), length, width);
     }
     public String ToString() {return Integer.toString(x) + Integer.toString(y); }
 }
