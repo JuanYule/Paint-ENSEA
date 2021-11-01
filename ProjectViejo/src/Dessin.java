@@ -79,8 +79,6 @@ public class Dessin extends JPanel implements MouseListener, MouseMotionListener
 
     }
 
-
-
     public void paintComponent(Graphics graph) {
         super.paintComponent(graph);
         this.setBackground(Color.white);

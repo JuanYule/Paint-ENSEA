@@ -43,7 +43,6 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         this.C = Color.BLACK;
         this.nameFigure = "Rectangle";
         this.current_figure = new Rectangle();
-
     }
 
     @Override
@@ -52,36 +51,20 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         this.y = e.getY();
         System.out.println(e);
     }
-
     @Override
     public void mousePressed(MouseEvent e) {
         this.x = e.getX();
         this.y = e.getY();
         System.out.println(this.x+" et "+ this.y + " couleur =" + this.C);
     }
-
     @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
+    public void mouseReleased(MouseEvent e) {}
     @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
+    public void mouseEntered(MouseEvent e) {}
     @Override
-    public void mouseExited(MouseEvent e) {
-
-    }
-
+    public void mouseExited(MouseEvent e) {}
     @Override
-    public void mouseDragged(MouseEvent e) {
-
-    }
-
+    public void mouseDragged(MouseEvent e) {}
     @Override
-    public void mouseMoved(MouseEvent e) {
-
-    }
+    public void mouseMoved(MouseEvent e) {}
 }

@@ -115,11 +115,8 @@ public class Window extends JFrame implements ActionListener {
         contentPanel.add(deref);
         this.setVisible(true);
 //======================================================//
-
         northPanel.addMouseListener(new MouseAdapter() {
-
             public void mouseClicked(MouseEvent e) {
-                System.out.println(e.getX() + " " + e.getY());
                 draw.mouseClicked(e);
             }
             @Override
@@ -144,58 +141,56 @@ public class Window extends JFrame implements ActionListener {
         switch (cmd) {
             case "Noir":
                 draw.setColor(Color.BLACK);
-                System.out.println("I've been clicked Noir!");
+                //System.out.println("I've been clicked Noir!");
                 break;
             case "Rouge":
-                System.out.println("I've been clicked rouge!");
+                //System.out.println("I've been clicked rouge!");
                 draw.setColor(Color.RED);
                 break;
             case "Jaune":
-                System.out.println("I've been clicked jaune!");
+                //System.out.println("I've been clicked jaune!");
                 draw.setColor(Color.YELLOW);
                 break;
             case "Purple":
-                System.out.println("I've been clicked purple!");
+                //System.out.println("I've been clicked purple!");
                 draw.setColor(Color.MAGENTA);
                 break;
             case "Bleu":
-                System.out.println("I've been clicked blue!");
+                //System.out.println("I've been clicked blue!");
                 draw.setColor(Color.BLUE);
                 break;
             case "Vert":
-                System.out.println("I've been clicked vert!");
+                //System.out.println("I've been clicked vert!");
                 draw.setColor(Color.GREEN);
                 break;
             case "Orange":
-                System.out.println("I've been clicked orange!");
+                //System.out.println("I've been clicked orange!");
                 draw.setColor(Color.ORANGE);
                 break;
             case "Rose":
-                System.out.println("I've been clicked Rose");
+                //System.out.println("I've been clicked Rose");
                 draw.setColor(Color.PINK);
                 break;
-
             //======================Button Implementation Figures==============================
-
             case "Ellipse":
-                System.out.println("I've been clicked ellipse!");
+                //System.out.println("I've been clicked ellipse!");
                 draw.setCurrent_figure(new Ellipse());
-                System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
+                //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Rectangle":
-                System.out.println("I've been clicked rectangle!");
+                //System.out.println("I've been clicked rectangle!");
                 draw.setCurrent_figure(new Rectangle());
-                System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
+                //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Square":
-                System.out.println("I've been clicked square!");
+                //System.out.println("I've been clicked square!");
                 draw.setCurrent_figure(new Square());
-                System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
+                //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Circle":
-                System.out.println("I've been clicked circle!");
+                //System.out.println("I've been clicked circle!");
                 draw.setCurrent_figure(new Circle());
-                System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
+                //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Author":
                 JOptionPane info = new JOptionPane();
