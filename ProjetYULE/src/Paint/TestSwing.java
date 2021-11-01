@@ -23,7 +23,7 @@ public class TestSwing {
         //Change de Lenght et Width du rectangle et Ellipse
         Rect1.setLength(8);
         Rect1.setWidth(10);
-        System.out.println("Length: "+Rect1.getLength(Rect1));
+        System.out.println("Length: "+Rect1.getLength(Rect1));/
         System.out.println("Width: "+Rect1.getWidth(Rect1));
         System.out.println("Perimeter :" + Rect1.getPerimeter(Rect1)); //Verification du périmètre
         System.out.println("Surface :" + Rect1.getSurface(Rect1));  //Verification de la surface du rectangle

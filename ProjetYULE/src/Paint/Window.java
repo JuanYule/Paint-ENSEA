@@ -82,7 +82,7 @@ public class Window extends JFrame implements ActionListener {
 //====================DAWING PANEL==============================//
         this.drawing = new Drawing();
         contentPanel.add(this.drawing, "Center");
-        //JPanel northPanel = new JPanel();
+        ///JPanel northPanel = new JPanel();
         //northPanel.setLayout(new GridLayout(60,1));
         //northPanel.setBackground(Color.WHITE);
 //========================== menu bar ===========================//

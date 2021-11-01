@@ -6,6 +6,7 @@ import java.awt.event.*;
 
 class mousedrag extends JFrame implements  MouseListener,MouseMotionListener
 {
+    //
     int x,y,x1,y1;
     mousedrag()
     {

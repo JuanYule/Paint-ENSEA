@@ -54,7 +54,7 @@ public abstract class Figure implements java.io.Serializable{
     }
 
     //---------Abstract methodes------------------//
-    //--------------------------------------------//
+    //--------------------------------------------///
     public abstract void setBoundingBox(int  heightBB,  int  widthBB);
     public abstract void draw(Graphics g);
 

@@ -13,7 +13,7 @@ public class Rectangle extends Figure{
     //Constructor sin parametros
     ////	Rectangle(){
     ////		origine = new Point(x, y);
-    ////	}
+    /////	}
 
     public Rectangle (int px, int py, Color c){
         super(px, py, c);

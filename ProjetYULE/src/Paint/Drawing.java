@@ -64,7 +64,7 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
 
     @Override
     public void mousePressed(MouseEvent e) {
-        this.x_pressed = e.getX();
+        this.x_pressed = e.getX();//
         this.y_pressed = e.getY();
         System.out.println(this.x_pressed+" et "+ this.y_pressed + " couleur =" + this.C);
 
