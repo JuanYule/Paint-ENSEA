@@ -3,7 +3,6 @@ public class Point implements java.io.Serializable{
     int Y;
 
     public String ToString() {return Integer.toString(X) + Integer.toString(Y) ; }
-
     /**
      * Construit un point de coordonnees (a, b)
      *

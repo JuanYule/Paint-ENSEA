@@ -107,6 +107,8 @@ public class Window extends JFrame implements ActionListener {
 
         m.add(menu1);
         m.add(menu2);
+        m.add(menu1);
+        m.add(menu2);
 
         this.setJMenuBar(m);
     //========
@@ -172,25 +174,21 @@ public class Window extends JFrame implements ActionListener {
             //======================Button Implementation Figures==============================
             case "Ellipse":
                 //System.out.println("I've been clicked ellipse!");
-                this.drawing.setCurrent_figure(new Ellipse());
                 this.drawing.setName("Ellipse");
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Rectangle":
                 //System.out.println("I've been clicked rectangle!");
-                this.drawing.setCurrent_figure(new Rectangle());
                 this.drawing.setName("Rectagle");
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Square":
                 //System.out.println("I've been clicked square!");
-                this.drawing.setCurrent_figure(new Square());
                 this.drawing.setName("Square");
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
             case "Circle":
                 //System.out.println("I've been clicked circle!");
-                this.drawing.setCurrent_figure(new Circle());
                 this.drawing.setName("Circle");
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;

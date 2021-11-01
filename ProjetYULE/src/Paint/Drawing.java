@@ -19,6 +19,10 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
     private int y_pressed;
     private int x_releassed;
     private int y_releassed;
+    int x_dragged;
+    int y_dragged;
+    int x_real;
+    int y_real;
 
     public Color getColor() {
         return C;
@@ -48,7 +52,6 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         this.setBackground(Color.WHITE);
         this.C = Color.BLACK;
         this.nameFigure = "Rectangle";
-        this.current_figure = new Rectangle();
         addMouseListener(this);
         addMouseMotionListener(this);
     }
@@ -59,36 +62,38 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
     @Override
     public void paintComponent(Graphics graphics){
         super.paintComponent(graphics);
-        graphics.drawRect(x_pressed,y_pressed,Math.abs(x_pressed-x_releassed),Math.abs(y_pressed-y_releassed));
+        for (Figure f : list){
+            f.draw(graphics);
+        }
+        //graphics.drawRect(x_pressed,y_pressed,Math.abs(x_pressed-x_releassed),Math.abs(y_pressed-y_releassed));
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        this.x_pressed = e.getX();//
-        this.y_pressed = e.getY();
+        x_pressed = e.getX();
+        y_pressed = e.getY();
         System.out.println(this.x_pressed+" et "+ this.y_pressed + " couleur =" + this.C);
 
-        int x_real = Math.abs(x_pressed-x_releassed);
-        int y_real = Math.abs(y_pressed-y_releassed);
+
         if (nameFigure.equals("Rectangle")){
             Rectangle rectangle0 = new Rectangle(x_real, y_real, C);
             this.list.add(rectangle0);
-            System.out.println(list);
+            //System.out.println(list);
         }
         if (nameFigure.equals("Ellipse")){
             Ellipse ellipse0 = new Ellipse(x_real/2, y_real/2, C);
             this.list.add(ellipse0);
-            System.out.println(list);
+            //System.out.println(list);
         }
         if (nameFigure.equals("Square")){
-            Square cuadrado = new Square();
+            Square cuadrado = new Square(x_pressed,  y_pressed, x_real, C);
             this.list.add(cuadrado);
-            System.out.println(list);
+            //System.out.println(list);
         }
         if (nameFigure.equals("Circle")){
-            Circle circulo = new Circle();
+            Circle circulo = new Circle(x_pressed, y_pressed, x_real, C);
             this.list.add(circulo);
-            System.out.println(list);
+            //System.out.println(list);
         }
     }
     @Override
@@ -98,8 +103,11 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
     }
     @Override
     public void mouseDragged(MouseEvent e) {
-        this.x_releassed = e.getX();
-        this.y_releassed = e.getY();
+        x_dragged = e.getX();
+        y_dragged = e.getY();
+        x_real = Math.abs(x_pressed-x_releassed);
+        y_real = Math.abs(y_pressed-y_releassed);
+        list.get(list.size()-1);
         this.repaint();
     }
     @Override

@@ -22,7 +22,6 @@ public class Dessin extends JPanel implements MouseListener, MouseMotionListener
     int dist_x;
     int dist_y;
 
-
     public Graphics g;
 
     public void mouseDragged(MouseEvent e) {
@@ -57,28 +56,23 @@ public class Dessin extends JPanel implements MouseListener, MouseMotionListener
             //System.out.println("la longueur de rect0 est "+ rect0.longueur);
             //System.out.print("La liste est :" + liste);
         }
-
         if(nomFigure.equals("Hihi")) {
             Carre square0 =new Carre(Pressedx, Pressedy, dist_x, c);
             this.liste.add(square0);
             //System.out.print("La liste est :" + liste);
         }
-
         if(nomFigure.equals("Hoho")) {
             Cercle circle =new Cercle(Pressedx, Pressedy, dist_x, c);
             this.liste.add(circle);
             //System.out.print("La liste est :" + liste);
         }
-
         if(nomFigure.equals("Ah des barres")) {
             Ellipse ellipse= new Ellipse(Pressedx, Pressedy, dist_x, dist_y, c);
             this.liste.add(ellipse);
             System.out.println("la longueur du petit axe de ellipse est "+ellipse.PetitAxe);
             //System.out.print("La liste est :" + liste);
         }
-
     }
-
     public void paintComponent(Graphics graph) {
         super.paintComponent(graph);
         this.setBackground(Color.white);

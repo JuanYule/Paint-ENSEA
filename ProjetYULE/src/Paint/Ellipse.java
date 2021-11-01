@@ -16,14 +16,11 @@ public class Ellipse extends Figure{
         super(px, py, c);
     }
 
-    public Ellipse (int px, int py, int r, Color C){
+    public Ellipse (int px, int py, int r, int R, Color C){
         super(px, py, C);
-
+        this.semiAxisX = r;
+        this.semiAxisY = R;
     }
-    public Ellipse() {
-
-    }
-
     public void setSemiAxisX(int axisX){
         if (axisX > 0){
             this.semiAxisX = axisX;
@@ -46,10 +43,10 @@ public class Ellipse extends Figure{
         this.semiAxisY = largeurBB;
     }
 
-    public void draw(Graphics g) {
+    public void draw(Graphics graphics) {
         //System.out.println(this.color);
-        g.setColor(this.c);
-        g.fillRect(origine.getX(),origine.getY(), semiAxisX, semiAxisY);
+        graphics.setColor(this.c);
+        graphics.fillRect(origine.getX(),origine.getY(), semiAxisX, semiAxisY);
     }
     public String ToString() {return Integer.toString(x) + Integer.toString(y); }
 }

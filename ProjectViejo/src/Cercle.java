@@ -8,8 +8,6 @@ public class Cercle extends Ellipse {
         this.r = hauteurBB;
         this.r = largeurBB ;
     }
-
-
 	/*public Cercle(int x, int y, int rayon){
 		super(x, y);
 		if(x==y) {
@@ -19,7 +17,6 @@ public class Cercle extends Ellipse {
 			System.out.println("Ce n'est pas un cercle");
 		}
 	}*/
-
 	/*public Cercle(int x, int y, int rayon, Color c){
 		super(x, y);
 		if(x==y) {
@@ -30,12 +27,10 @@ public class Cercle extends Ellipse {
 		}
 		this.color = c;
 	} */
-
 	/*public Cercle(int rayon) {
 		super(0, 0);
 		this.GrandAxe = rayon;
 	}*/
-
     public Cercle(int rayon, Color c) {
         super(rayon, rayon , c);
         this.GrandAxe = rayon;
@@ -48,7 +43,6 @@ public class Cercle extends Ellipse {
         this.GrandAxe = rayon;
         this.PetitAxe = rayon;
     }
-
     public double getSurface(Cercle cercle) {return cercle.GrandAxe*cercle.GrandAxe*Pi;}
     public double getPerimetre(Cercle cercle) {return cercle.GrandAxe*2*Pi;}
 

@@ -8,12 +8,11 @@ public class Square extends Rectangle{
         this.length = L;
         this.width = L;
     }
-
-    public Square() {
-
+    public Square (int x, int y, int L, Color col){
+        super(x, y, L, L, col);
+        this.length = L;
+        this.width = L;
     }
-
-
     //======SETS===========//
     public void setLength(int lengthSquare){
         if (lengthSquare > 0){
@@ -25,10 +24,8 @@ public class Square extends Rectangle{
             this.width = widthSquare;
         }
     }
-
     public void setBoundingBox(int  length,  int  width) {
         this.length = length;
         this.width = width;
     }
-
 }

@@ -48,15 +48,15 @@ public abstract class Figure implements java.io.Serializable{
         this.x = X;
         this.y = Y;
     }
-    public Figure() {
-        this.c = Color.black;
-        this.origine = new Point();
+    public Figure(Point p, Color col) {
+        origine = p;
+        this.c =col;
     }
 
     //---------Abstract methodes------------------//
     //--------------------------------------------///
     public abstract void setBoundingBox(int  heightBB,  int  widthBB);
-    public abstract void draw(Graphics g);
+    public abstract void draw(Graphics graphics);
 
     public String ToString() {return Integer.toString(x) + Integer.toString(y); }
 }

@@ -29,13 +29,11 @@ public class Rectangle extends Figure {
         g.setColor(this.color);
         g.fillRect(origine.getX(),origine.getY(), longueur, largeur);
     }
-
     public Rectangle(int x, int y, int L, int l){
         super(x, y, Color.black);
         this.longueur = L;
         this.largeur = l;
     }
-
     public Rectangle(int x, int y, int L, int l, Color c){
         super(x, y, c);
         this.longueur = L;
@@ -47,19 +45,15 @@ public class Rectangle extends Figure {
 		this.longueur = l; 
 		this.largeur = L; 
 	}*/
-
     public Rectangle(int L, int l, Color c) {
         super(0, 0,c);
         this.longueur = l;
         this.largeur = L;
     }
-	
-	
 	/*Point a = new Point(largeur,0); 
 	Point b = new Point(largeur, longueur); 
 	//Point c = new Point (0,longueur); 
 	Point d = new Point (0, 0); */
-
     //Pour retourner différents paramètres
     public int getLargeur(Rectangle rectangle){return rectangle.largeur;}
     public int getLongueur(Rectangle rectangle){return rectangle.longueur;}
@@ -72,16 +66,12 @@ public class Rectangle extends Figure {
             this.longueur = L ;
         }
     }
-
-
     //Modifie la largeur du rectangle
     public void setLargeur(int l) {
         if (l > 0) {
             this.largeur = l;
         }
     }
-
-
     public String affiche(Rectangle rectangle) {
         String dessin = "+";
         int i ;
@@ -111,7 +101,6 @@ public class Rectangle extends Figure {
         }
         return dessin;
     }
-
     public String ToString() {return Integer.toString(x) + Integer.toString(y) + Integer.toString(longueur) + Integer.toString(largeur); }
 
 }

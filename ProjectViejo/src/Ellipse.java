@@ -14,27 +14,22 @@ public class Ellipse extends Figure{
         this.GrandAxe = hauteurBB;
         this.PetitAxe = largeurBB;
     }
-
-
     public Ellipse(int x, int y, int A, int a){
         super(x, y, Color.black);
         this.GrandAxe = A;
         this.PetitAxe = a;
     }
-	
 	/*public Ellipse(int A, int a) {
 		super(0, 0);
 		this.GrandAxe = A; 
 		this.PetitAxe = a;
 	}*/
-
     public Ellipse(int A, int a, Color c) {
         super(0, 0, c);
         this.GrandAxe = A;
         this.PetitAxe = a;
         this.color = c;
     }
-
     public Ellipse(int x, int y, int A, int a, Color c ){
         super(x, y, c);
         this.GrandAxe = A;

@@ -20,7 +20,11 @@ public class Rectangle extends Figure{
         this.length = px;
         this.width = py;
     }
-    public Rectangle() {}
+    public Rectangle (int x, int y, int m, int n, Color c){
+        super(x, y, c);
+        this.length = m;
+        this.width = n;
+    }
 
     //=======================================/
     //=============== SET====================/
