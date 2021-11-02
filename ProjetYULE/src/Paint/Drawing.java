@@ -92,7 +92,6 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
             //System.out.println(list);
         }
     }
-
     public void mouseReleased(MouseEvent e) {
         this.x_releassed = e.getX();
         this.y_releassed = e.getY();
@@ -100,8 +99,10 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
     public void mouseDragged(MouseEvent e) {
         x_dragged = e.getX();
         y_dragged = e.getY();
-        x_real = Math.abs(x_dragged-x_pressed);
-        y_real = Math.abs(y_dragged-y_pressed);
+        //System.out.println("x:"+" "+ x_dragged+" y:"+y_dragged);
+        x_real = x_dragged-x_pressed;
+        y_real = y_dragged-y_pressed;
+        System.out.println("x:"+" "+ x_real+" y:"+y_real);
         list.get(list.size()-1).setBoundingBox(x_real, y_real);
         this.repaint();
     }
