@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 
 
 public class Window extends JFrame implements ActionListener {
@@ -97,6 +98,10 @@ public class Window extends JFrame implements ActionListener {
         JMenuItem Save = new JMenuItem("Save") ;
         JMenuItem Quit = new JMenuItem("Quit") ;
 
+        Save.addActionListener(this);
+        Open.addActionListener(this);
+        Quit.addActionListener(this);
+
         menu1.add(New);
         menu1.add(Open);
         menu1.add(Save);
@@ -179,10 +184,48 @@ public class Window extends JFrame implements ActionListener {
                 this.drawing.setName(miFigura);
                 //System.out.println(draw.getCurrent_figure() + " " + draw.getColor());
                 break;
+            case "Save":
+                SaveFile();
+                break;
+            case "Open":
+                OpenFile();
+                break;
             case "Author":
                 JOptionPane info = new JOptionPane();
                 JOptionPane.showInternalMessageDialog( info, "Paint by Juan S. Yule",
                         "Information",JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    public void SaveFile() {
+        FileOutputStream file;
+        ObjectOutputStream out;
+        try {
+            file = new FileOutputStream("Dessin.txt");
+            out = new ObjectOutputStream(file);
+            out.writeObject(this.drawing);
+            out.close();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+    public void OpenFile() {
+        FileInputStream file_in;
+        ObjectInputStream in ;
+        Container contentPane = getContentPane();
+        contentPane.remove(this.drawing);
+        try {
+            file_in = new FileInputStream("Dessin.txt");
+            in = new ObjectInputStream(file_in);
+            this.drawing = (Drawing) in.readObject();
+            contentPane.add(this.drawing);
+            contentPane.revalidate();
+            contentPane.repaint();
+            in.close();
+        } catch (IOException | ClassNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
     }
 }

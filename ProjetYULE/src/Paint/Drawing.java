@@ -37,10 +37,9 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
     public void setColor(Color c) {
         this.C = c;
     }
-    public void setNameFigure(String nameFigure) {
-        this.nameFigure = nameFigure;
+    public void setName(String name){
+        this.nameFigure = name;
     }
-
     public void setCurrent_figure(Figure current_figure) {
         this.current_figure = current_figure;
     }
@@ -50,16 +49,15 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         C = color;
         addMouseListener(this);
         addMouseMotionListener(this);
+        setName("Rectangle");
+        setColor(Color.BLACK);
     }
-    public void setName(String name){
-        this.nameFigure = name;
-    }
-
 
     public void paintComponent(Graphics graphics){
         super.paintComponent(graphics);
         this.setBackground(Color.WHITE);
         for (Figure f : list){
+            //System.out.println(f);
             f.draw(graphics);
         }
         //graphics.drawRect(x_pressed,y_pressed,Math.abs(x_pressed-x_releassed),Math.abs(y_pressed-y_releassed));
@@ -68,7 +66,7 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
     public void mousePressed(MouseEvent e) {
         x_pressed = e.getX();
         y_pressed = e.getY();
-        System.out.println(this.x_pressed+" et "+ this.y_pressed + " couleur =" + this.C);
+        //System.out.println(this.x_pressed+" et "+ this.y_pressed + " couleur =" + this.C);
         Color C = this.C;
 
         if (nameFigure.equals("Rectangle")){
@@ -102,7 +100,7 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         //System.out.println("x:"+" "+ x_dragged+" y:"+y_dragged);
         x_real = x_dragged-x_pressed;
         y_real = y_dragged-y_pressed;
-        System.out.println("x:"+" "+ x_real+" y:"+y_real);
+        //System.out.println("x:"+" "+ x_real+" y:"+y_real);
         list.get(list.size()-1).setBoundingBox(x_real, y_real);
         this.repaint();
     }
