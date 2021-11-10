@@ -54,6 +54,7 @@ public abstract class Figure implements java.io.Serializable{
     public Figure(Point point){
         origine = point;
     }
+    public void setOrigine(Point P){this.origine = P;}
     //---------Abstract methodes------------------//
     //--------------------------------------------///
     public abstract void setBoundingBox(int  heightBB,  int  widthBB);

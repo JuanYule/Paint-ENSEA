@@ -50,4 +50,5 @@ public class Rectangle extends Figure{
         g.setColor(this.c);
         g.fillRect(origine.getX(),origine.getY(), length, width);
     }
+
 }

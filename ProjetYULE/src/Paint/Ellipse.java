@@ -55,4 +55,5 @@ public class Ellipse extends Figure{
         g.fillOval(origine.getX(),origine.getY(), semiAxisX, semiAxisY);
     }
     public String ToString() {return Integer.toString(x) + Integer.toString(y); }
+
 }
