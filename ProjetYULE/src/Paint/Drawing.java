@@ -73,22 +73,22 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         if (nameFigure.equals("Rectangle")){
             Rectangle rectangle0 = new Rectangle(x_pressed, y_pressed, x_real, y_real, C);
             this.list.add(rectangle0);
-            System.out.println(list);
+            //System.out.println(list);
         }
         if (nameFigure.equals("Ellipse")){
             Ellipse ellipse0 = new Ellipse(x_pressed, y_pressed, x_real/2, y_real/2, C);
             this.list.add(ellipse0);
-            System.out.println(list);
+            //System.out.println(list);
         }
         if (nameFigure.equals("Square")){
             Square cuadrado = new Square(x_pressed,  y_pressed, x_real, C);
             this.list.add(cuadrado);
-            System.out.println(list);
+            //System.out.println(list);
         }
         if (nameFigure.equals("Circle")){
             Circle circulo = new Circle(x_pressed, y_pressed, x_real, C);
             this.list.add(circulo);
-            System.out.println(list);
+            //System.out.println(list);
         }
     }
     public void mouseReleased(MouseEvent e) {
@@ -104,15 +104,15 @@ public class Drawing extends JPanel implements MouseListener ,MouseMotionListene
         //System.out.println("x:"+" "+ x_real+" y:"+y_real);
 
         if (x_real < 0){
-            System.out.println(list.get(list.size()-1));
+            //System.out.println(list.get(list.size()-1));
             list.get(list.size()-1).setOrigine(new Point(x_dragged, y_pressed));
         }
         if (y_real < 0){
-            System.out.println(list.get(list.size()-1));
+            //System.out.println(list.get(list.size()-1));
             list.get(list.size()-1).setOrigine(new Point(x_pressed, y_dragged));
         }
         if (y_real < 0 && x_real < 0){
-            System.out.println(list.get(list.size()-1));
+            //System.out.println(list.get(list.size()-1));
             list.get(list.size()-1).setOrigine(new Point(x_dragged, y_dragged));
         }
         list.get(list.size()-1).setBoundingBox(Math.abs(x_real), Math.abs(y_real));
